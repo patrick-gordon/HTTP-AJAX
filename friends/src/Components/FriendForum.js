@@ -16,12 +16,20 @@ export default class FriendForum extends Component {
         e.persist();
         this.setState(prevState => ({ friend: {...prevState.friend, [e.target.name]: e.target.value} }))
     }
-
+   
+    submitHandler = () => {
+     if(this.state.active) {
+        this.props.updateFriend( this.state.friend)
+     } else {
+        this.props.addFriend( this.state.friend)
+     }
+ }
 
     render() {
         return (
             <div>
-                <form>
+                <form onSubmit={this.submitHandler}>
+
                     <input 
                         type='text'
                         placeholder='Name'

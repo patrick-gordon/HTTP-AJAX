@@ -1,5 +1,5 @@
 import React from 'react'
-import Friend from './friend';
+import Friend from './Friend';
 
 
 
